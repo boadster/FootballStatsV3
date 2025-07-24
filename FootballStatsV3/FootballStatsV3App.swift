@@ -12,7 +12,10 @@ import SwiftData
 struct FootballStatsV3App: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Game.self,
+            Play.self,
+            Player.self,
+            Team.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +28,7 @@ struct FootballStatsV3App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Text("Hello, world!") // until we wire up GameListView
         }
         .modelContainer(sharedModelContainer)
     }
